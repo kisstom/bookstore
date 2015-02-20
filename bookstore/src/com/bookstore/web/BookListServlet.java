@@ -10,11 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bookstore.BookRepository;
+import com.bookstore.JDBC;
 
 @WebServlet("/book/")
 public class BookListServlet extends HttpServlet {
 	
-	@Inject 
+	@Inject @JDBC 
 	private BookRepository bookRepo;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

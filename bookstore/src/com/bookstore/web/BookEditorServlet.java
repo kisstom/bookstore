@@ -11,11 +11,12 @@ import java.text.SimpleDateFormat;
 
 import com.bookstore.BookRepository;
 import com.bookstore.Book;
+import com.bookstore.JDBC;
 
 @WebServlet("/book")
 public class BookEditorServlet extends HttpServlet {
 
-	@Inject
+	@Inject @JDBC
 	private BookRepository bookRepo;
 		
 	private SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
